@@ -37,6 +37,6 @@ charset=UTF-8" pageEncoding="UTF-8"%>
         }
         %>
     </h1>
-    <h1>직업 : <%=PR%></h1>
+    <h1>자기소개 : <%=PR%></h1>
 </body>
 </html>
