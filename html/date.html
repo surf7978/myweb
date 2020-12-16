@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,4 +28,35 @@
         <input type="reset" value="다시제출">
     </form>
 </body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/date.html</title>
+</head>
+<body>
+    <form>
+        <h3>개인 정보 입력</h3>
+        <h3>오늘 날짜 입력</h3>
+        Today : <input type="date" name="today">
+        <h3>프로젝트 수행 기간</h3>
+        From : <input type="date" name="form" min="2016-03-01" max="2016-12-31">
+        To : <input type="date" name="to" min="2018-03-01" max="2018-12-31">
+        <p></p>
+        <h3>생일(년/월) 입력</h3>
+        생일 : <input type="month" name="birth">
+        <h3>주간 계획(년/주) 입력</h3>
+        주간 계획 : <input type="week" name="weekend">
+        <p></p>
+        <h3>현재 시간 입력</h3>
+        Time : <input type="time" name="Now">
+        <h3>생일(년도, 월, 일, 시간) 입력</h3>
+        Birthday : <input type="datetime-local" name="bdaytime">
+        <input type="submit" value="제출">
+        <input type="reset" value="다시제출">
+    </form>
+</body>
+
 </html>
