@@ -46,17 +46,24 @@
         // document.getElementById("fruit").after(li_2);
         // document.getElementById("fruit").after(li_1);
 
-        var tr1 = document.createElement("tr");
-        tr1.innerHTML="name";
-        var tr2= document.createElement("td");
-        tr2.innerHTML="Hong";
-        var tr3= document.createElement("td");
-        tr3.innerHTML="age";
-        document.getElementById("name&age").append(tr1);
-        document.getElementById("name&age").append(tr2);
-        document.getElementById("name&age").append(tr3);
-
-
+        var tr = document.createElement("tr");
+        //tr.innerHTML="asd";
+        var td1= document.createElement("td");
+        td1.innerHTML="Name";
+        var td2= document.createElement("td");
+        td2.innerHTML="Age";
+        var td3= document.createElement("td");
+        td3.innerHTML="Hong";
+        var td4= document.createElement("td");
+        td4.innerHTML="15";
+        document.getElementById("name&age").append(tr);
+        document.getElementById("name&age").append(td1);
+        document.getElementById("name&age").append(td2);
+        document.getElementById("name&age").append(tr);
+        document.getElementById("name&age").append(td3);
+        document.getElementById("name&age").append(td4);
+        //document.getElementById("name&age").append(tr);
+        
 
         var grade = 4;
         for(var i = 1; i<=9; i++){
