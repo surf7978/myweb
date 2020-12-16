@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -159,4 +160,85 @@
 </body>
 
 >>>>>>> cbdd82e (12.14)
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/select.html</title>
+</head>
+
+<body>
+    <select name="subjects" id="subjects" size=10 multiple>
+        <!-- multiple = 선택 여러개 가능 -->
+        <optgroup label="language">
+            <option value="1">HTML5</option>
+            <option value="2">CSS3</option>
+            <option value="3">JavaScript</option>
+            <option value="4">JQuery</option>
+        </optgroup>
+        <optgroup label="computer">
+            <option value="1">Software</option>
+            <option value="2">Robot</option>
+            <option value="3">System</option>
+            <option value="4">OS</option>
+        </optgroup>
+    </select>
+    <select name="subjects" id="subjects" size=5>
+        <optgroup label="Country">
+            <option value="1">Japan</option>
+            <option value="2">Korea</option>
+            <option value="3">China</option>
+        </optgroup>
+    </select>
+    <p></p>
+    <input type="submit" value="선택">
+    <input type="reset" value="다시선택">
+    <h3>선택사항 입력하세요.</h3>
+    <form>
+        <label>전공 분야를 입력하세요.
+            <input type="text" list="majolist" name="major">
+            <datalist id="majolist">
+                <option value="Software">소프트웨어</option>
+                <option value="Robot">로봇</option>
+                <option value="System">시스템</option>
+            </datalist>
+        </label>
+        <p></p>
+        <input type="submit" value="선택">
+        <input type="reset" value="다시선택">
+        <h3>나이를 입력하세요.</h3>
+        <input type="number" name="count" min="1" max="200">
+        <p></p>
+        <h3>색상를 입력하세요.</h3>
+        <input type="color" name="color" value="#0000ff">
+        <input type="submit" value="선택">
+        <input type="reset" value="다시선택">
+        <p></p>
+        <h3>0~100 범위에서 원하는 지점을 선택하세요</h3>
+        <input type="range" name="range" min="0" max="100">
+        <input type="submit" value="선택">
+        <input type="reset" value="다시선택">
+        <p></p>
+        <h3>이메일을 정확하게 입력하세요.</h3>
+        이메일 : <input type="email" name="email">
+        <input type="submit" value="선택">
+        <input type="reset" value="다시선택">
+        <p></p>
+        <h3>홈페이지 주소를 입력하세요.</h3>
+        홈페이지 : <input type="url" name="url">
+        <input type="submit" value="선택">
+        <input type="reset" value="다시선택">
+        <p></p>
+        <h3>검색어를 입력하세요.</h3>
+        검색 : <input type="search" name="search">
+        <input type="submit" value="선택">
+        <input type="reset" value="다시선택">
+        <p></p>
+    </form>
+</body>
+
+>>>>>>> f9596c0645ce481e4629ed2c7799c6ccc7c104c5
 </html>
