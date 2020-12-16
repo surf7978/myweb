@@ -8,19 +8,19 @@
 <body>
     <div id="show">Hello</div> 
     <ul id="fruit">
-        <li>Apple</li>
-        <li>Orange</li>
-    </ul> <!-- 이렇게 나오도록 자바스크립트로 출력 -->
+        <!-- <li>Apple</li>
+        <li>Orange</li> -->
+    </ul> <!--이렇게 나오도록 자바스크립트로 출력-->
     <table id="name&age" border="1">
-        <tr>
+        <!-- <tr>
             <td>name</td>
             <td>age</td>
         </tr>
         <tr>
             <td>Hong</td>
             <td>15</td>
-        </tr><!--이렇게 나오도록 자바스크립트로 출력-->
-    </table>
+        </tr> -->
+    </table> <!--이렇게 나오도록 자바스크립트로 출력-->
     <script>
         var name = document.getElementById('show').innerHTML;
         // id가 show 인 html 내용 출력
@@ -46,24 +46,17 @@
         // document.getElementById("fruit").after(li_2);
         // document.getElementById("fruit").after(li_1);
 
-        var tr1_td1 = document.createElement("td");
-        tr1_td1.innerHTML="name";
-        var tr1_td2 = document.createElement("td");
-        tr1_td2.innerHTML="age";
-        var tr2_td1= document.createElement("td");
-        tr2_td1.innerHTML="Hong";
-        var tr2_td2= document.createElement("td");
-        tr2_td2.innerHTML="15";
-        document.getElementById("name&age").append(tr1_td1);
-        document.getElementById("name&age").append(tr1_td2);
-        document.getElementById("name&age").append(tr2_td1);
-        document.getElementById("name&age").append(tr2_td2);
         var tr1 = document.createElement("tr");
-        tr1.innerHTML=tr1_td1;
+        tr1.innerHTML="name";
+        var tr2= document.createElement("td");
+        tr2.innerHTML="Hong";
+        var tr3= document.createElement("td");
+        tr3.innerHTML="age";
         document.getElementById("name&age").append(tr1);
-        var tr2= document.createElement("tr");
-        tr2.innerHTML=tr2_td1 & tr2_td2;
         document.getElementById("name&age").append(tr2);
+        document.getElementById("name&age").append(tr3);
+
+
 
         var grade = 4;
         for(var i = 1; i<=9; i++){
