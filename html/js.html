@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/js.html</title>
+</head>
+<body>
+    <div id="show">Hello</div> 
+    <ul id="fruit">
+        <li>Apple</li>
+        <li>Orange</li>
+    </ul> <!-- 이렇게 나오도록 자바스크립트로 출력 -->
+    <table id="name&age" border="1">
+        <tr>
+            <td>name</td>
+            <td>age</td>
+        </tr>
+        <tr>
+            <td>Hong</td>
+            <td>15</td>
+        </tr><!--이렇게 나오도록 자바스크립트로 출력-->
+    </table>
+    <script>
+        var name = document.getElementById('show').innerHTML;
+        // id가 show 인 html 내용 출력
+        console.log(name);
+        //F12눌러서 콘솔확인
+        document.getElementById('show').innerHTML = "World";
+
+        var divTag = document.createElement("div");
+        //divTag에 <div></div>요소를 넣음
+        divTag.innerHTML="Nice";
+        //Nice 문구 넣음
+        document.getElementById('show').after(divTag);
+        //divTag안에 내용으로 들어감
+        document.getElementById('show').append(divTag);
+        //하위 자식으로 붙어서 들어감
+
+        var li_1 = document.createElement("li");
+        var li_2 = document.createElement("li");
+        li_1.innerHTML="Apple";
+        li_2.innerHTML="Orange";
+        document.getElementById("fruit").append(li_1);
+        document.getElementById("fruit").append(li_2);
+        // document.getElementById("fruit").after(li_2);
+        // document.getElementById("fruit").after(li_1);
+
+        var tr1_td1 = document.createElement("td");
+        tr1_td1.innerHTML="name";
+        var tr1_td2 = document.createElement("td");
+        tr1_td2.innerHTML="age";
+        var tr2_td1= document.createElement("td");
+        tr2_td1.innerHTML="Hong";
+        var tr2_td2= document.createElement("td");
+        tr2_td2.innerHTML="15";
+        document.getElementById("name&age").append(tr1_td1);
+        document.getElementById("name&age").append(tr1_td2);
+        document.getElementById("name&age").append(tr2_td1);
+        document.getElementById("name&age").append(tr2_td2);
+        var tr1 = document.createElement("tr");
+        tr1.innerHTML=tr1_td1;
+        document.getElementById("name&age").append(tr1);
+        var tr2= document.createElement("tr");
+        tr2.innerHTML=tr2_td1 & tr2_td2;
+        document.getElementById("name&age").append(tr2);
+
+        var grade = 4;
+        for(var i = 1; i<=9; i++){
+            var str = grade+'*'+i+'='+(grade*i);
+            console.log(str);
+        }
+
+    </script>
+</body>
+</html>

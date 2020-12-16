@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/style.html</title>
+    <style>
+        h1{
+            color: white;
+            font-size: 15px;
+            background-color: blue;
+        }
+        header > h1 {
+            background-color: greenyellow;
+        }
+        content > h1{
+            font-size: 10px;
+        }
+        #first { 
+            color: black;
+        }
+        /* # = id 값 찾음 */
+        .first{
+            color: violet;
+        }
+        /* . = class 값 찾음 */
+        header .first{
+            color: red;
+        }
+        /* header . = header안에서의 class 값만 찾음(띄어쓰기 주의) */
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>스타일 지정1</h1>
+        <h1 id='first'>스타일 지정1-1</h1>
+        <div>
+            <h1 class='first'>스타일 지정1-2</h1>
+            <!-- 이렇게 하면 header에만 적용시킨 배경색 적용안됨 -->
+        </div>
+        <h1 class='first'>스타일 지정1-3</h1>
+    </header>
+
+    <content>
+        <h1>스타일 지정2</h1>
+        <h1 class='first'>스타일 지정2-1</h1>
+        <h1 id='first1'>스타일 지정2-2</h1>
+    </content>
+    <script>
+        document.getElementById();
+
+        document.getElementsByClassName('first');
+    </script>
+</body>
+</html>
