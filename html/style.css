@@ -1,0 +1,23 @@
+h1{
+    color: white;
+    font-size: 15px;
+    background-color: blue;
+}
+header > h1 {
+    background-color: greenyellow;
+}
+content h1{
+    font-size: 10px;
+}
+#first { 
+    color: black;
+}
+/* # = id 값 찾음 */
+.first{
+    color: violet;
+}
+/* . = class 값 찾음 */
+header .first{
+    color: red;
+}
+/* header . = header안에서의 class 값만 찾음(띄어쓰기 주의) */

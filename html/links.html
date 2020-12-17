@@ -4,10 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>html/links.html</title>
+    <style>
+        a:link{
+            color: blueviolet;
+            text-decoration: underline;
+        }
+        /* 링크 안 열었으면 그 글자는 이 색깔로 바꿔줌 */
+        a:visited{
+            color: chartreuse;
+        }
+        /* 이미 링크 열었으면 그 글자는 이 색깔로 바꿔줌 */
+        a:hover{
+            text-decoration: overline;
+        }
+        /* 마우스 가져다대면 밑줄 위치 위로감 */
+        a:active{
+            color: orange;
+        }
+        /* 링크 클릭했을때의 색깔 */
+        ul>li:hover{
+            color: orangered;
+        }
+        /* ul태그 안에 li요소 글자들에게 마우스 가져다대면 이 색깔로 바꿔줌 */
+        li:nth-child(2){
+            background: hotpink;
+        }
+        /* li요소의 두번째 줄부터 이 조건 줌 */
+        li:nth-last-child(1){
+            background: skyblue;
+        }
+        /* li요소의 뒤에서부터 첫번째 줄부터 이 조건 줌 */
+        li:first-child{
+            border: 2px dotted red;
+        }
+        /* li요소의 첫번째줄에 이 조건 줌 */
+        li:nth-of-type(2){
+            border: 2px dotted black;
+        }
+        /* li요소의 2번째요소들은 이 조건 줌 */
+
+
+        /* +추가 */
+        /* (2n)=짝수줄 (2n+1)=홀수줄로 설정할 수도 있음  */
+
+        /* +추가 of-type과 child 차이점 */
+        /* ul:nth-of-type(2)=바디안의 2번째 유엘태그요소를 이 조건 줌*/
+        /* ul:nth-child(2)=바디안의 2번째요소가 유엘태그면 이 조건 줌(유엘아니면 실행안됨) */
+    </style>
 </head>
 <body>
-    <a href="link.html" target="_blank">link페이지</a>
-    <!-- _blank=새로운 페이지로 열어줌 -->
+    <a href="link.html" target="_self">link페이지</a>
+    <!-- _blank=새로운 탭으로 열어줌, _self로하면 현재탭이 바뀜 -->
     <h1>UL 리스트</h1>
     <ul style="list-style-type: square;">
         <li>Orange</li>

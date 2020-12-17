@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/css_attr.html</title>
+    <style>
+        h1[text]{
+            color: red;
+            background-color: gray;
+        }
+        p[text]{
+            color: red;
+            font-size: 30px;
+        }
+        h1[text="attr3"]{
+            color: green;
+            background-color: pink;
+        }
+        p[text="red"]{color: yellow; background-color: purple;}
+        p[text~="bb"]{color: yellow; background-color: green;}
+        p[text|="a1"]{color: yellow; background-color: blue;}
+        p[text^="img"]{color: yellow; background-color: red;}
+        p[text$=".png"]{color: yellow; background-color: gray;}
+        p[text*="ong"]{color: yellow; background-color: pink;}
+    </style>
+</head>
+<body>
+    <h1 text="attr1">TEXT 속성 이름 선택자</h1>
+    <h1 text="attr2">TEXT 속성 이름 선택자</h1>
+    <p text="attr3">TEXT 속성 이름 선택자</p>
+    <h1 text="attr3">속성과 속성값 선택자</h1>
+    <p>속성 선택 없음</p><!-- 그냥 <p></p>는 안에 [text]없어서 글자색이랑 폰트사이즈 안커짐 -->
+    <p text="red">TEXT = "red"</p>
+    <p text="aa bb cc">TEXT ~= "bb"</p>
+    <p text="a1-a2-a3">TEXT |= "a1"</p>
+    <p text="img/pic.jpg">TEXT ^= "img"</p>
+    <p text="img/pic.png">TEXT $= ".png"</p>
+    <p text="Seingyong Hing">TEXT *= "ong"</p>
+</body>
+</html>

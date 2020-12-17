@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>html/combinator.html</title>
+        <style>
+            /* > = 부모와 자식간의 관계 */
+            /* ~ = 형제간의 관계(동등함) */
+            /* + = and?? */
+            /* , = 그룹 묶기 */
+            /* # = id 찾기 */
+            /* . = classs 찾기 */
+
+            /* div h1{
+            background-color: turquoise;
+        }
+        div > h1{
+            background-color: tomato;
+        } */
+
+            /* div ~ h1{
+            background-color: turquoise;
+        } */
+            /* 형제로 쳐서 div 같은 급에있는 h1에게 조건 줌 */
+
+            /* div + h1 +h2 {
+            background-color: turquoise;
+        } */
+            /* div 다음 h1이 오고 h2가 온다면 위의 조건 줌 */
+
+            /* div, h1, h2 {
+            background-color: violet;
+        } */
+            /* 같은 조건이면 ,로 한번에 그룹지어서 조건 줄 수 있음 */
+
+            h1 +h2 +ul {
+                color: blue;
+            }
+            div+h3 {
+                color: red;
+            }
+            h3+p {
+                color: purple;
+                background-color: yellow;
+            }
+            h1~ul {
+                color: teal;
+            }
+            div ~h3 {
+                color: thistle;
+            }
+            h3~p {
+                color: violet;
+                background-color: wheat;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Apple</h1>
+            <span>
+                <h1>Apple-1</h1>
+            </span>
+        </div>
+        <h1>Apple-2</h1>
+        <h2>Banana</h2>
+        <h3>Orange</h3>
+        <p>Fruits</p>
+        <div>
+            <h1>인접1</h1>
+            <h2>인접2</h2>
+            <ul>목록
+                <li>주제1</li>
+                <li>주제2</li>
+            </ul>
+        </div>
+        <div>
+            <h3>인접3</h3>
+            <p>인접4</p>
+            <h3>인접5</h3>
+            <h1>형제1</h1>
+            <h2>형제2</h2>
+            <ul>목록
+                <li>주제1</li>
+                <li>주제2</li>
+            </ul>
+        </div>
+        <h3>형제3</h3>
+        <h4>형제4</h4>
+        <p>형제5</p>
+        <h3>형제6</h3>
+        <h3>형제7</h3>
+    </body>
+</html>
