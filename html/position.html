@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/position.html</title>
+    <!-- static = 기본
+         block = 줄바꿈
+         relative = 상대적
+         fixed = 전체화면에서 위치고정
+         absolute = 해당요소에서 위치 이동
+         sticky = 해당영역내에서 위치고정 -->
+    <style>
+        div{
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            color: white;
+            margin-bottom: 10px;
+        }
+        .container{
+            background-color: yellow;
+            position: relative; /*여기서 기준 잡아주면 box가 그에 따라 포지션 잡음*/
+            left: 10px;
+            top: 10px;
+        }
+        .box{
+            background-color: blue;
+            /*position: static;*/ /*static=기본위치 left top 수치줘도 안움직임*/
+            /*position: relative;*/ /*원래 있어야할 위치에서 상대적으로 left,top만큼 이동*/
+            /*position: absolute;*/ /*absolute=절대값 위치에서 이동*/
+            /*position: fixed;*/ /* 전체화면 내에서 스크롤 내려도 고정*/
+            position: sticky; /*container영역 내에서 스크롤 내려도 고정*/
+            left: 20px;
+            top:  20px;
+        }
+    </style>
+</head>
+<body>
+    <article class='container'>
+        <div></div>
+        <div class="box">Box</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </article>
+</body>
+</html>

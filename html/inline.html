@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/inline.html</title>
+    <style>
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: cadetblue;
+            margin-bottom: 10px;
+            display: inline-block; /*페이지창 크기에 따라 위치이동 됨*/
+        }
+        span{
+            width: 50px;
+            height: 50px;
+            background-color:greenyellow;
+            margin-bottom: 10px;
+            display: block; /*줄바꿔서 나옴*/
+                            /*+추가 none = 아예 안나옴 */
+        }
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+
+    <span>1</span> <!--span은 컨텐츠가 있는 만큼만 공간을가짐-->
+    <span>2</span>
+    <span>3</span>
+</body>
+</html>

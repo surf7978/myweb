@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/boxmodel.html</title>
+    <style>
+        article{
+            border: 5px;
+            border-style: dotted;
+            border-color: red;
+        }
+
+        div{
+            background-color: beige;
+            border: 5px solid blue;
+            /* padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px; */
+            /* padding: 10px 10px 10px 10px; */
+            /*padding: 0px 10px;*/ /*위아래 0px 좌우 10px*/
+            padding: 0px 10px 0px; /*위 좌우 아래*/
+            /* padding: 10px;  */
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            /* padding=내부여백 margin=외부여백*/
+            /*(+추가 위 오른쪽 아래 왼쪽 순으로 적용된다.*/
+            /* 적용순서 바꾸고 싶으면 미리 방향 입력 하면됨)*/
+            border-radius: 20px; /*모서리 둥글게*/
+            box-shadow: 10px 10px 10px gray;/*오른쪽이동 아래로이동 그림자크기*/
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div style="font-size: 50px;">Hello</div>
+
+    </article>
+</body>
+</html>
