@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/float.html</title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 50px;
+            border: 3px solid #73ad21;
+            float: left; /*이 요소가 왼쪽으로 붙고 남음 공간 활용함*/
+        }
+        .div2, .div4{
+            border: 3px dotted red;
+        }
+        .div3{
+            width: 100px;
+            height: 50px;
+            border: 3px solid #73ad21;
+            float: right;
+        }
+        .div4 {
+            clear: both; /*겹치는 구간 양쪽 다 요소 없어짐*/
+        }
+    </style>
+</head>
+<body>
+    <h2>float 속성</h2>
+    <div class="div1">div1</div>
+    <div class="div2">div2 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Et pariatur totam quo modi, vero molestiae necessitatibus, laudantium magni consequatur accusamus exercitationem nam, fugit odit officia ullam architecto culpa! Consectetur, autem.</div>
+    <h2>clear 속성</h2>
+    <div class="div3">div3</div>
+    <div class="div4">div4 - Lorem, ipsum dolor sit amet consectetur adipisicing elit. In dolorem et accusamus facere vitae non asperiores soluta alias ea cumque nihil neque quis eos, aperiam illo est perspiciatis? Error, totam.</div>
+</body>
+</html>

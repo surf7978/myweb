@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html2/TableSpacing.html</title>
+    <style>
+        td, th{border: 1px solid red;}
+        #tb1{
+            border: 2px solid green;
+            border-spacing: 10px; /*상하좌우*/
+        }
+        #tb2{
+            border: 3px solid red;
+            background-color: aquamarine;
+            border-spacing: 20px 40px; /*좌우 , 상하*/
+        }
+    </style>
+</head>
+<body>
+    <table style id="tb1" width="350px">
+        <tr>
+            <th>table border-spacing</th>
+            <td>상하좌우10px</td>
+        </tr>
+    </table>
+    <p></p>
+    <table style id="tb2" width="350px">
+        <tr>
+            <th>table border-spacing</th>
+            <td>좌우20px 상하40px</td>
+        </tr>
+    </table>
+</body>
+</html>

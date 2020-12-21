@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>html2/symatic.html</title>
+        <style>
+            header{
+                color: white;
+                background-color: #666;
+            }
+            h2{
+                display: inline-block;
+            }
+            ul{
+                display: inline-block;
+                list-style-type: none;/*li의 동그라미 없어짐*/
+            }
+            ul >li {
+                display: inline-block;
+            }
+            section{
+                background-color: silver;
+            }
+            section > nav{
+                float: left;
+                width: 30%;
+                height: 300px;
+                background-color: teal;
+            }
+            section > article{
+                float: left;
+                width: 70%;
+                height: 300px;
+                overflow: auto;/*내용이 해당크기 넘어가면 스크롤 생성함*/
+            }
+            footer{
+                background-color: tan;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>CSS Layout Float</h2>
+        <p>In this example, we have created a header, two columns/boxes and a footer. On
+            smaller screens, the columns will stack on top of each other.</p>
+        <p>Resize the browser window to see the responsive effect (you will learn more
+            about this in our next chapter - HTML Responsive.)</p>
+
+        <header>
+            <h2>Cities</h2>
+            <ul>
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+                <li>menu4</li><!--메뉴를 Cities 오른쪽으로 정렬하시오-->
+            </ul>
+        </header>
+
+        <section>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">London</a>
+                    </li>
+                    <li>
+                        <a href="#">Paris</a>
+                    </li>
+                    <li>
+                        <a href="#">Tokyo</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <article>
+                <h1>London</h1>
+                <p>London is the capital city of England. It is the most populous city in the
+                    United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+                <p>Standing on the River Thames, London has been a major settlement for two
+                    millennia, its history going back to its founding by the Romans, who named it
+                    Londinium. Lorem ipsum dolor sit amet, consectetur adipisicing 
+                    elit. Reiciendis velit nostrum aspernatur maxime soluta ad 
+                    perferendis amet culpa ea ab assumenda alias doloribus repellendus
+                     cum perspiciatis commodi, minima sunt! Ipsa! Lorem ipsum, dolor 
+                     sit amet consectetur adipisicing elit. Incidunt numquam tempora 
+                     ducimus dolore nulla. Mollitia, in voluptate vel impedit tempora 
+                     exercitationem delectus eum totam minima ab suscipit iste quae 
+                     sapiente?</p>
+            </article>
+        </section>
+
+        <footer>
+            <p>Footer</p>
+        </footer>
+    </body>
+</html>
