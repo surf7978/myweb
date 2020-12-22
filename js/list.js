@@ -43,6 +43,7 @@ function myFunc() {
         }
     }
     document.write('</ul>');
+    document.write('<button src="../main.html">return</button>');
 }
 
 function myFuncTB() {
@@ -62,6 +63,11 @@ function myFuncTB() {
         document.write('</tr>');
     }
     document.write('</table>');
+    document.write('<button onclick="back()">return</button>');
+}
+
+function back() {
+    document.write('<script src="../main.html"></script>');
 }
 
 var a = document.getElementById('show'); 
