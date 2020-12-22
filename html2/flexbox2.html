@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html2/flexbox2.html</title>
+    <style>
+        .flex-container{
+            background-color: dodgerblue;
+            display: flex;
+            height: 200px;
+        }
+        .flex-container>div{
+            background-color: #f1f1f1;
+            width: 40px;
+            margin: 10px;
+            text-align: center;
+            font-size: 30px;
+            border: 1px dotted red;
+            line-height: 100px;
+        }
+        .flex-container>div:nth-child(1){/*1번째 div*/
+            /*order: 3;*//*4번째에 오게설정 (default 값이 0이라 3적으면 4번째 온다)*/
+            /*flex-grow: 4;*//*플렉스 길이 +다른 플렉스의 비율에 따라 길이 정해짐*/
+            /*flex-shrink: 0;*/ /*너비 줄어드는 비율*/
+            align-self: center; /*stretch=영역이 있는 만큼 다 차지함 center=위의 line-height만큼 가지며 정렬*/
+        }
+         /* .flex-container>div:nth-child(2){
+             order: 4; 
+            flex-grow: 3;
+        }
+        .flex-container>div:nth-child(3){
+             order: 2; 
+            flex-grow: 2;
+        }
+        .flex-container>div:nth-child(4){
+             order: 1; 
+            flex-grow: 1;
+        } */
+    </style>
+</head>
+<body>
+    <!-- div.flex-container>div{$}*4 -->
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html2/flexbox.html</title>
+    <style>
+        .flex-container{
+            display: flex; /*flex-container 안의 내용들 아이템화?*/
+            background-color: dodgerblue;
+            height: 400px;
+            /*flex-direction: row;*/ /*기준축을 바꿈 (row=x축 column=y축)*/
+            /*flex-wrap: wrap-reverse;*/ /*공간없으면 줄바꿈함(내림) +반대=nowrap +줄올림=reverse*/
+            flex-flow: row wrap;/*flex-direction: row; + flex-wrap: wrap-reverse;*/
+            /*justify-content: space-around;*/ /*아이템 정렬 center=중앙 flex-start=왼쪽 flex-end=오른쪽 space-between=분할 space-around=여백동일분할*/
+            /*align-content: stretch;*//*justify-content=메인축기준 align-content=메인의 반대축=크로스축 +stretch=기본값*/
+            align-items: baseline; /*align-items=크로스아이템기준으로적용(여기서 div가 아이템임) +baseline=가운데정렬*/
+        }                                   
+        .flex-container > div{
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+            height: 50px;
+        }
+        .flex-container>div:nth-child(3){ /*3번째 div에만*/
+            height: 30px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- div.flex-container>div{$}*5 하면 자동으로 만들어줌-->
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+
+</body>
+</html>
