@@ -1,4 +1,4 @@
-document.write("<ul><li>Apple</li><li>Banana</li></ul>")
+document.write("<ul><li>Apple</li><li>Banana</li></ul>");
 
 for (let i = 1; i <= 10; i++) {
     document.write('<p>i의 값은 : <b>' + i + '</b> 입니다.</p>');
@@ -29,6 +29,9 @@ for (let i = 1; i <= 10; i++) {
 document.write('</ul>');
 
 function myFunc() {
+    document.write(
+        "<style> .even{background-color: yellow;} .odd{background-color: red;}</style>"
+    );
     document.write('<ul>');
     for (let i = 1; i <= 10; i++) {
         if (i % 2 == 1) {
@@ -43,33 +46,49 @@ function myFunc() {
         }
     }
     document.write('</ul>');
-    document.write('<button src="../main.html">return</button>');
-}
-
-function myFuncTB() {
-    document.write('<table>');
-    for (let i = 1; i <= 10; i++) {
-        document.write('<tr>');
-        if (i % 2 == 1) {
-
-            document.write('<td class="even">' + dan + '*' + i + "=<b>" + (
-                dan * i
-            ) + '</b></td>');
-        } else {
-            document.write('<td class="odd">' + dan + '*' + i + "=<b>" + (
-                dan * i
-            ) + '</b></td>');
-        }
-        document.write('</tr>');
-    }
-    document.write('</table>');
     document.write('<button onclick="back()">return</button>');
 }
 
-function back() {
-    document.write('<script src="../main.html"></script>');
+function myFuncTB() {
+    document.write(
+        "<style> .even{background-color: yellow;} .odd{background-color: red;}</style>"
+    );
+    document.write('<table border=1px>');
+    for (let i = 1; i < 10; i++) {
+        if (i % 2 == 1) {
+            document.write('<tr>');
+            document.write(
+                '<td class="even"><center>' + dan + ' * ' + i + '</center></td>'
+            );
+            document.write('<td class="even"><center>=<center></td>');
+            document.write("<td class='even'><b><center>" + (
+                dan * i
+            ) + '</center></b></td>');
+            document.write('</tr>');
+        } else {
+            document.write('<tr>');
+            document.write(
+                '<td class="odd"><center>' + dan + ' * ' + i + '</center></td>'
+            );
+            document.write('<td class="odd"><center>=<center></td>');
+            document.write("<td class='odd'><b><center>" + (
+                dan * i
+            ) + '</center></b></td>');
+            document.write('</tr>');
+        }
+    }
+    document.write('</table>');
+    document.write('<button onclick="back()">return</button>'); //일단 톰캣으로 하면 되긴되는데 흠... 제대로 안됨
 }
 
-var a = document.getElementById('show'); 
+function back() {
+    // history.go(-1); document.write("<a
+    // src='https://localhost/web/main.html'></a>");
+    window
+        .location
+        .reload();
+}
+
+var a = document.getElementById('show');
 console.log(a);
-a.innerHTML="OK";
+a.innerHTML = "OK";
