@@ -30,7 +30,7 @@ function input_friend1() {
     tdHobby.innerHTML = friend5.hobby10;
     trFDS.append(tdHobby);
 
-    document.getElementById('friends10Name').value = friends10.append(trFDS);
+    document.getElementById('friends10').value = friends10.append(trFDS);
 }
 
 function insertPerson(name, age){

@@ -16,13 +16,14 @@ console.log(ulTag);
 
 function input_fruit(){
     //내가한거1
+    //document.getElementById('show1').value = ulTag.append(fruit.value);
+    
+    
+    //내가한거2
     let liTag2 = document.createElement('li');
     liTag2.innerHTML = fruit.value;
     document.getElementById('show1').value = ulTag.append(liTag2);
     
-    //내가한거2
-    //document.getElementById('show1').value = ulTag.append(fruit.value);
-
     //정답
     // ulTag.id = 'fruit1';
     // let fruit = document.getElementById('fruit').value;
