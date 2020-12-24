@@ -11,7 +11,7 @@ function input_friend1() {
     friend5.hobby10 = hobbyf;
 
     friends4[i1++] = friend5;
-    console.clear();
+    //console.clear();
 
     for(friend5 of friends4){
         for(field in friend5){
@@ -19,6 +19,7 @@ function input_friend1() {
         }
     }
     //입력 버튼 누르면 테이블에 추가 되게 만들기
+    //내가한것
     let trFDS = document.createElement('tr');
     let tdName = document.createElement('td');
     tdName.innerHTML = friend5.name10;
@@ -29,8 +30,10 @@ function input_friend1() {
     let tdHobby = document.createElement('td');
     tdHobby.innerHTML = friend5.hobby10;
     trFDS.append(tdHobby);
-
     document.getElementById('friends10').value = friends10.append(trFDS);
+
+    //정답
+    
 }
 
 function insertPerson(name, age){
