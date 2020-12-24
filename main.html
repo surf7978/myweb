@@ -15,8 +15,34 @@
 </head>
 <body>
     <div id="show1">Main페이지입니다.</div>
+    과일: <input type="text" id="fruit" value="melon"><br>
+    <button onclick='input_fruit()'>input_fruit</button><br><br>
+    결과:<input id="result"><br>
+    이름:<input type="text" id="name10" value="홍길동"><br>
+    나이:<input type="text" id="age10" value="15"><br>
+    취미:<input type="text" id="hobby10" value="독서"><br>
+    <button onclick='input_friend1()'>input_friend1</button><br>
+    <button onclick='input_friend()'>input_friend</button><br><br>
+
+    <table border="2px" id="friends10">
+        <tr>
+            <th id="friends10Name">이름</th>
+            <th>나이</th>
+            <th>취미</th>
+        </tr>
+    </table>
+    <br>
+    
+    <script src="js/function3.js" ></script>
     <input type="text" id="name" onchange="nameFunc()">
     <script src="js/function2.js" ></script>
+    <button onclick='insertNum()'>insertNum</button>
+    <button onclick='checkGrade(name3)'>checkGrade</button>
+    <button onclick='diffSum(name3, name4)'>diffSum</button>
+    <button onclick='findMax(name3, name4, name5, name6, name7)'>findMax</button>
+    <button onclick='sum3(name3, name4)'>sum3</button>
+    <p></p>
+    <button onclick='insertPerson()'>insertPerson</button>
     <script src="js/function.js" ></script>
     <script src="js/arrary.js" ></script>
     <script src="js/variable.js"></script>
@@ -30,5 +56,6 @@
     <script src="js/list.js"></script>
     <script src="js/element.js"></script> <!--위에 id="show"를 만들어야 밑에 js파일에서 읽을 수 있다-->
     <script src="js/list.js"></script> <!--스크립트안에 변수가 let이 아니라 var면 두번 실행가능-->
+    <script src="js/function4.js" ></script>
 </body>
 </html>

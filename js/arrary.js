@@ -1,5 +1,5 @@
 let numbers = [83,4,9,91,80,16,22];
-let sum =0;
+let sum = 0;
 for(num of numbers){
     if(num % 2 == 0){
         sum += num;
