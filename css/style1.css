@@ -21,14 +21,25 @@ nav {
   background: #ccc;
   padding: 20px;
 }
+button{
+  text-align: center;
+  float: left;
+  background: rgb(219, 218, 218);
+  font-size: 20px;
+}
 
 div {
   float: left;
-  padding: 20px;
   width: 70%;
   background-color: #f1f1f1;
   height: 300px; 
-  scrolling: auto;
+}
+
+section {
+  float: left;
+  width: 100%;
+  background-color: #f1f1f1;
+  height: 300px; 
 }
 
 footer {
@@ -36,4 +47,11 @@ footer {
   padding: 10px;
   text-align: center;
   color: white;
+}
+
+iframe {
+  float: left;
+  width: 100%;
+  background-color: #f1f1f1;
+  height: 300px;
 }
