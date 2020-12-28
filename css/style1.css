@@ -19,13 +19,14 @@ nav {
   width: 30%;
   height: 300px; 
   background: #ccc;
-  padding: 20px;
 }
 button{
+  width: 100%;
   text-align: center;
   float: left;
   background: rgb(219, 218, 218);
   font-size: 20px;
+  border: 0;
 }
 
 div {
@@ -49,9 +50,22 @@ footer {
   color: white;
 }
 
-iframe {
+iframe#home {
   float: left;
   width: 100%;
-  background-color: #f1f1f1;
+  background-color: gold;
   height: 300px;
 }
+
+iframe#myIntro {
+  float: left;
+  width: 100%;
+  background-color: mediumturquoise;
+  height: 300px;
+}
+
+#home{background-color: gold}
+#myIntro{background-color: mediumturquoise}
+.home{background-color: gold}
+.myIntro{background-color: mediumturquoise}
+.colorOFF{background: rgb(219, 218, 218);}

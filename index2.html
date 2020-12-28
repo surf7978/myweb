@@ -8,11 +8,18 @@
   <script>
     function home(){
       let div = document.getElementById('div');
-      div.innerHTML = "<iframe src='info2.html#home' scrolling='no'></iframe>";
+      div.innerHTML = "<iframe id='home' src='info2.html#home' scrolling='no' style='border:0'></iframe>";
+      homeButton.setAttribute('class','home');
+      myIntroButton.setAttribute('class','colorOFF');
     }
     function myIntro(){
       let div = document.getElementById('div');
-      div.innerHTML = "<iframe src='info2.html#myIntro' scrolling='no'></iframe>";
+      div.innerHTML = "<iframe id='myIntro' src='info2.html#myIntro' scrolling='no' style='border:0'></iframe>";
+      myIntroButton.setAttribute('class','myIntro');
+      homeButton.setAttribute('class','colorOFF');
+    }
+    function back(){
+      window.location.reload();
     }
   </script>
 </head>
@@ -26,8 +33,10 @@
 
   <section>
     <nav>
-      <button onclick="home()">홈 메뉴</button><br><br>
-      <button onclick="myIntro()">자기소개 메뉴</button>
+      <button id='homeButton' onclick="home()">홈 메뉴</button><br><br>
+      <button id='myIntroButton' onclick="myIntro()">자기소개 메뉴</button><br><br>
+      <button onclick="back()">업데이트예정 메뉴1</button><br><br>
+      <button onclick="back()">업데이트예정 메뉴2</button>
     </nav>
   
     <contnent>
