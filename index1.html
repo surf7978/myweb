@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type= "text/javascript">
+		function info(){
+			var info = document.getElementById("con");
+			info.innerHTML = "<iframe src='html/info.html' name='if_a' width='70%' height='400px'></iframe>";
+        }
+        function home(){
+			var info = document.getElementById("con");
+			info.innerHTML = "홈화면입니다";
+		}
+	</script>
+    
+</head>
+<body>
+
+    <header>
+        <h1>header  영역</h1>
+        <a href="#">Sub1</a><a>  </a> <a href="#">Sub2</a><a>  </a> <a href="#">Sub3</a>
+    </header>
+    
+    <section>
+      <nav id="tabs">
+        <ul>
+          <li><button onclick="home()">HOME</button></li>
+          <li><button onclick="info()">INFO</button></li>
+          
+        </ul>
+      </nav>
+      
+      <content id="con">
+        홈화면입니다
+        
+    </content>
+    </section>
+    
+    <footer>
+      <p>Footer 영역 입니다.</p><br>
+      <p>테스트용 index 입니다.</p>
+    </footer>
+    
+
+</body>
+</html>
