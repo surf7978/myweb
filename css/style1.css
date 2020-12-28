@@ -6,6 +6,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+a{
+  background: #ccc;
+  padding: 20px;
+  cursor: pointer;
+}
+
 header {
   background-color: #666;
   padding: 30px;
@@ -17,9 +23,11 @@ header {
 nav {
   float: left;
   width: 30%;
-  height: 300px; 
+  height: 500px; 
   background: #ccc;
+  padding-top: 10px;
 }
+
 button{
   width: 100%;
   text-align: center;
@@ -27,45 +35,46 @@ button{
   background: rgb(219, 218, 218);
   font-size: 20px;
   border: 0;
+  cursor: pointer;
 }
 
 div {
   float: left;
   width: 70%;
   background-color: #f1f1f1;
-  height: 300px; 
+  height: 500px; 
 }
 
 section {
   float: left;
   width: 100%;
   background-color: #f1f1f1;
-  height: 300px; 
+  height: 500px; 
 }
 
 footer {
   background-color: #777;
-  padding: 10px;
+  padding-top: 515px;
+  font-size: 20px;
   text-align: center;
   color: white;
+  height: 600px;
 }
 
 iframe#home {
   float: left;
   width: 100%;
   background-color: gold;
-  height: 300px;
+  height: 500px;
 }
 
 iframe#myIntro {
   float: left;
   width: 100%;
   background-color: mediumturquoise;
-  height: 300px;
+  height: 500px;
 }
 
-#home{background-color: gold}
-#myIntro{background-color: mediumturquoise}
 .home{background-color: gold}
 .myIntro{background-color: mediumturquoise}
 .colorOFF{background: rgb(219, 218, 218);}
