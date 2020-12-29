@@ -58,7 +58,6 @@ function getGender(num){
     }
 }
 
-
 let numbers = '990101-3234567';
 numbers += ' 990102-2345678';
 numbers += ' 000201-3456789';
