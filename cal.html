@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cal.html</title>
+    <style>
+        td, th{
+            width: 60px;
+            height: 50px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!--div#show--> 
+    <div id="show" style="cursor: grab;"></div>
+        <script>
+            // let s1=document.getElementById('show');
+            // s1.innerHTML='<h1>s1의 hello</h1>'
+            // let h=document.createElement('h1');
+            // h.innerHTML='h1의 hello';
+            // s1.append(h);
+            
+            let days = ['Sun','Mon','Tue','Wed','Thr','Fri','Sat'];
+
+            // let showAppend = document.getElementById('show');
+            // let tableTag=document.createElement('table');
+            // tableTag.setAttribute('style', 'text-align: center');
+            // tableTag.setAttribute('border', '2px');
+            // showAppend.append(tableTag);
+            // let trTag=document.createElement('tr');
+            // tableTag.append(trTag);
+            // for(day of days){ //for(let i=0; i<days.length; i++){
+            //     let tdTag=document.createElement('td');
+            //     tdTag.innerHTML=day;//days[i];
+            //     trTag.append(tdTag);
+            // }
+
+            // let trTag1 = document.createElement('tr');
+            // for(let i=1; i<=31; i++){
+            //     let tdTag = document.createElement('td');
+            //     tdTag.innerHTML = i;
+            //     trTag1.append(tdTag);
+            //     if(i % 7 == 0){
+            //         tableTag.append(trTag1);    
+            //         trTag1 = document.createElement('tr');
+            //         tdTag.setAttribute('style', 'color:blue');
+            //     }
+            //     if(i%7==1){
+            //         tdTag.setAttribute('style', 'color:red');
+            //     }
+            // }
+            // tableTag.append(trTag1);
+            
+            let dates = [];
+            for(let i=1; i<=35; i++){
+                //1일이 시작되는 요일
+                let j = i-2;
+                if(j > 0 && j < 32){
+                    dates.push(j);
+                }else{
+                    dates.push(' ');
+                }
+            }
+            let tableTag = document.createElement('table');
+            tableTag.setAttribute('border','2px');
+            tableTag.setAttribute('style','text-align:center');
+            tableTag.setAttribute('id','tbl');
+            let trTag = document.createElement('tr');
+            days.forEach(createHeader);     
+            dates.forEach(createData);       
+            document.getElementById('show').append(tableTag);
+
+            function createHeader(a,b,c){
+                let thTag = document.createElement('th');
+                thTag.setAttribute('style','background-color: gray; color: white;');
+                thTag.innerHTML = a;
+                trTag.append(thTag);
+                tableTag.append(trTag);
+            }
+
+            function createData(a,b,c){
+                let tdTag = document.createElement('td');
+                tdTag.innerHTML = a;
+                if(b%7==0){
+                    trTag = document.createElement('tr');
+                    tdTag.setAttribute('style','color:red');
+                    trTag.append(tdTag);
+                }
+                if(b%7==6){
+                    tdTag.setAttribute('style','color:blue');
+                }
+                if(a==0){
+                    tdTag.setAttribute('style','background-color:silver');
+                }
+                trTag.append(tdTag);
+                tableTag.append(trTag);
+            }
+        </script>
+</body>
+</html>

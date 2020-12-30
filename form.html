@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form.html</title>
+    <style>
+        td{
+            text-align: center;
+            font-size: 25px;
+            padding: 10px;
+        }
+        button{
+            padding: 5px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <table border='3px' id="table" style="cursor: grab;">
+        <tr style="background-color: gray; color: white; font-weight: bold;">
+            <td>
+                <label for="id">ID </label><!--label해서 id연결해주면 그 부분 아무거나 눌러도 input체크됨-->
+                <input type="checkbox" name="id" id="id">
+            </td>
+            <td>이 름</td>
+            <td>나 이</td>
+            <td>취 미</td>
+            <td><button style="background-color: rgb(116, 114, 114); padding: 5px; font-size: 25px; font-weight: bold; color: white;">버 튼</button></td>
+        </tr>
+    </table>
+    <script>
+        let trTag = document.createElement('tr');
+        document.getElementById('table').append(trTag);
+        //td1 라벨,인풋
+        let tdTag1 = document.createElement('td');
+        trTag.append(tdTag1);
+        let labelTag = document.createElement('label');
+        labelTag.setAttribute('for','idr');
+        tdTag1.append(labelTag);
+        labelTag.innerHTML = 'ID ';
+        let inputTag = document.createElement('input');
+        inputTag.setAttribute('type','checkbox');
+        inputTag.setAttribute('name','idr');
+        inputTag.setAttribute('id','idr');
+        tdTag1.append(inputTag);
+        //td2 이름
+        let tdTag2 = document.createElement('td');
+        trTag.append(tdTag2);
+        tdTag2.innerHTML = '동길홍';
+        //td3 나이
+        let tdTag3 = document.createElement('td');
+        trTag.append(tdTag3);
+        tdTag3.innerHTML = '22세';
+        //td4 취미
+        let tdTag4 = document.createElement('td');
+        trTag.append(tdTag4);
+        tdTag4.innerHTML = '음악';
+        //td5 OK버튼
+        let tdTag5 = document.createElement('td');
+        trTag.append(tdTag5);
+        let buttonTag = document.createElement('button');
+        tdTag5.append(buttonTag);
+        buttonTag.innerHTML = 'OK';
+
+        //for와 forEach써서 작성
+        let members = [];
+        for(let i=0; i<=3; i++){
+            let member={};
+            member.name = '홍길동'+i;
+            member.age = 20+i+'세';
+            member.hobby = '독서'+i;
+            members.push(member);        
+        }
+        console.log(members);
+        
+        members.forEach(function(a,b){
+            let trTag = document.createElement('tr');
+            document.getElementById('table').append(trTag);
+            //라벨
+            let tdTag1 = document.createElement('td');
+            trTag.append(tdTag1);
+            let labelTag = document.createElement('label');
+            tdTag1.append(labelTag);
+            labelTag.setAttribute('for','id'+b);
+            labelTag.innerHTML = 'ID ';
+            //인풋
+            let inputTag = document.createElement('input');
+            inputTag.setAttribute('type','checkbox');
+            inputTag.setAttribute('name','id'+b);
+            inputTag.setAttribute('id','id'+b);
+            tdTag1.append(inputTag);
+            //이름, 나이, 취미
+            for(field in a){ 
+                let tdTag2 = document.createElement('td');
+                tdTag2.innerHTML = a[field];
+                trTag.append(tdTag2);
+            }
+            //OK버튼
+            document.getElementById('table').append(trTag);
+            let tdTag3 = document.createElement('td');
+            trTag.append(tdTag3);
+            let buttonTag = document.createElement('button');
+            tdTag3.append(buttonTag);
+            buttonTag.innerHTML = 'OK';
+            });
+    </script>
+</body>
+</html>
