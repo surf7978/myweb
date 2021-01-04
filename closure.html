@@ -9,11 +9,12 @@
     <script>
         let x = function(){
             let iCounter = 0;
+            //펑션안에 펑션넣는 것도 가능
             function changeValue(){
                 iCounter++;
                 console.log(iCounter);
             }
-            //changeValue(); 
+            //changeValue(); //이렇게 리턴하면 iCounter가 계속 0으로 초기화된다.
             return function(){
                 changeValue();
             } //+function도 리턴가능

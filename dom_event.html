@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom_event.html</title>
+</head>
+<body>
+    <button id="btn" style="padding: 30px; font-size: 40px;">OK</button>
+    <input type="text" id="name" style="padding: 30px; font-size: 40px;">
+    <script>
+        //console.log(window); //이벤트 콘솔에 다 보여줌
+        let btn = document.getElementById('btn');
+        btn.onclick = function(){
+            console.log('click');
+            window.alert('click');
+        }
+        btn.onmouseover = function(){
+            console.log('mouseover');
+            btn.style.backgroundColor='yellow';
+        }
+        btn.onmouseout = myMouseOut;
+        function myMouseOut(){
+            console.log('mouseout');
+            btn.style.backgroundColor='red';
+        }
+
+        let name = document.getElementById('name');
+        name.onkeydown = function(){
+            console.log(name.value);
+            document.getElementById('btn').innerHTML=name.value;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom_eventhandler.html</title>
+</head>
+<body>
+    <button id="btn"style="padding: 30px; font-size: 40px;">Click</button>
+    <script>
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', ()=>{ // addEventListner입력한 것('click')이 발생되면 이벤트 실행
+            window.alert('click');
+        }); 
+        btn.addEventListener('mouseover', ()=>{
+            btn.style.backgroundColor='yellow';
+        });
+        btn.addEventListener('mouseout', ()=>{
+            btn.style.backgroundColor='red';
+        });
+    </script>
+</body>
+</html>

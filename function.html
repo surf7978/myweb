@@ -49,9 +49,11 @@
             //persons 배열을 가지고 이름, 나이 , 취미 , 연락처 테이블 만들기
             let table = document.createElement('table');
             table.setAttribute('border','1');
+            table.setAttribute('style','text-align:center');
             //타이틀
             for(field in ary[0]){
-                let title = document.createElement('td');
+                let title = document.createElement('th');
+                title.setAttribute('style','background-color:gray; color:white;');
                 title.innerHTML = field;
                 table.append(title);
             }

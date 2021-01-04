@@ -1,0 +1,29 @@
+<html>
+
+  <head>
+    <title>DOM Tutorial</title>
+  </head>
+
+  <body>
+    <h1>DOM Lesson one</h1>
+    <p>Hello world!</p>
+    <div id="show"></div><!--<ul><li>One</li><li>Two</li></ul>를 자바스크립트로 만듬-->
+
+    <script>
+        let ul = document.createElement('ul');
+        let li = document.createElement('li');
+        let text = document.createTextNode('One'); //이제 innerHTML안해도됨
+        li.append(text);
+        ul.append(li);
+        document.getElementById('show').append(ul);
+
+        let bdy = document.getElementsByTagName('body'); //body기준
+        console.log(bdy[0].childNodes); //공란도 다 text 노드로 포함한다. +그러므로 p 요소 가져오려면 body[1]이 아니라 body[3]가져와야함
+        console.log(bdy[0].childNodes[1]); //공란때문에 childNodes[1]으로 가져와야 첫째줄 출력됨
+
+        let p = document.getElementsByTagName('p'); //p기준
+        console.log(p[0].previousSibling.nodeValue='hello'); //previousSibling=형제노드
+    </script>
+  </body>
+
+</html>

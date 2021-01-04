@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom.html</title>
+    <style>
+        td{
+            padding: 10px;
+            font-size: 30px;
+        }
+        #container{
+            width: 400px;
+            height: 400px;
+            background-color: yellow;
+            position: relative;
+        }
+        #animate{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <!-- <input type="number" id="selectNumber">
+    <button onclick="makeMulti()">출력</button>
+    <div id="show"></div>
+    <div class="show">
+        <h1>h1 tag</h1>
+        <h2>h2 tag</h2>
+        <h3>h3 tag</h3>
+        <p>p tage</p>
+    </div>
+    <div class="show">Hello
+    </div> -->
+
+    <button id="btn"></button><!--onclick 스크립트로 표현하기-->
+    <div id="container">
+        <div id="animate"></div>
+    </div>
+    <script>
+        // let show = document.getElementById('show');
+        // show = document.getElementsByClassName('show'); //배열처럼 컬렉션타입으로 담김
+        // show = document.getElementsByTagName('div');
+
+        // show = document.querySelectorAll('div>h3'); //div를 기준으로 노드값으로 가져옴
+        // for(let i =0; i<show.length; i++){
+        //     show[i].innerHTML = i;
+        // }
+        // console.log(show);
+
+        //구구단을 생성 function makeMulti(val); 테이블형식 기존body에있는거 지우고
+        // function makeMulti(val){
+        //     val = document.getElementById('selectNumber').value;
+        //     let delete2 = document.querySelectorAll('div.show')[0];
+        //     delete2.innerHTML = '';
+        //     let delete1 = document.querySelectorAll('div.show');
+        //     delete1[0].innerHTML = ' ';
+        //     delete1[1].innerHTML = ' ';
+        //     let insert = document.querySelectorAll('div.show')[0];
+        //     let tableTag = document.createElement('table');
+        //     tableTag.setAttribute('border','1');
+        //     tableTag.setAttribute('style','text-align:center');
+        //     insert.append(tableTag);
+        //     for(let i = 1; i<10; i++){
+        //         let trTag = document.createElement('tr');
+        //         tableTag.append(trTag);
+        //         let tdTag1 = document.createElement('td');
+        //         tdTag1.innerHTML = i;
+        //         trTag.append(tdTag1);
+        //         let tdTag2 = document.createElement('td');
+        //         tdTag2.innerHTML = '*';
+        //         trTag.append(tdTag2);
+        //         let tdTag3 = document.createElement('td');
+        //         tdTag3.innerHTML = val;
+        //         trTag.append(tdTag3);
+        //         let tdTag4 = document.createElement('td');
+        //         tdTag4.innerHTML = '=';
+        //         trTag.append(tdTag4);
+        //         let tdTag5 = document.createElement('td');
+        //         tdTag5.innerHTML = val*i;
+        //         trTag.append(tdTag5);
+        //     }
+        // }
+
+        //애니메이션 만들기
+        let btn = document.getElementById('btn');
+        btn.onclick = MoveStart; //()넣으면 바로 실행됨 ()빼야 클릭할때만 실행됨
+
+        function MoveStart(){
+            console.log('start');
+            let animate = document.getElementById('animate');
+            let i = 0;
+            let myInterval = setInterval(() => {
+                i++;
+                animate.style.left =i+'px';
+                animate.style.top =i+'px'; //#container를 position: relative; 으로 안하면 화면 0,0기준으로 움직임
+                if(i==350){
+                    clearInterval(myInterval); //clearInterval = 멈추게하는 명령문
+                }
+            }, 10); //setInterval = 1000밀리세컨드(1초) 단위로 반복하시오
+        }
+        setInterval(()=>{
+            document.getElementById('btn').innerHTML = new Date();
+        },1000) //1초간격으로 현재시간 보여주는 setInterval
+    </script>
+</body>
+</html>
