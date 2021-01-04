@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function.html</title>
+</head>
+<body>
+    <div id="show"></div>
+    <script>
+        function sum(a,b){
+            return a+b;
+        }
+        let result = sum(10,20);
+        document.getElementById('show').innerHTML = result;
+
+
+        function showElement(){
+            let h1 = document.createElement('h1');
+            h1.innerHTML = 'Hello';
+            return h1;
+        }
+        result = showElement();
+
+
+
+        //object_def에꺼 복붙
+        function Person(name, age, hobby){
+            this.name = name;
+            this.age = age;
+            this.hobby = hobby;
+        }
+        let persons = [];
+        Person.prototype.phone = '010-1111-2222'; 
+        // Person.prototype.toString = function(){
+        //     return this.name+', '+this.age+', '+this.hobby+', '+this.phone
+        // }
+
+        let p1 = new Person('Park',20,'sleeping');
+        p1.phone = '010-1234-5678';
+        let p2 = new Person('Choi',22,'reading');
+        persons.push(p1);
+        persons.push(p2);
+        persons.push(new Person('Kim',25,'game'));
+        //여기까지
+
+
+        function createTable(ary){
+            //persons 배열을 가지고 이름, 나이 , 취미 , 연락처 테이블 만들기
+            let table = document.createElement('table');
+            table.setAttribute('border','1');
+            //타이틀
+            for(field in ary[0]){
+                let title = document.createElement('td');
+                title.innerHTML = field;
+                table.append(title);
+            }
+            //테이블내용 for of / for in 
+            //for(let i=0; i<ary.length; i++){ //오브젝트 for~of 
+            for(AR of ary){
+                let trTag = document.createElement('tr');
+            //    for(field in ary[i]){ //배열 for~in
+                for(field in AR){
+                    let tdTag = document.createElement('td');
+            //        tdTag.innerHTML = ary[i][field];
+                    tdTag.innerHTML = AR[field];
+                    trTag.append(tdTag);
+                }
+                table.append(trTag);
+            }
+            console.log(table);
+            return table;
+        }
+        result = createTable(persons);
+        document.getElementById('show').append(result);
+
+
+
+        let x = (a,b) => { //람다식표현?
+            return a+b;
+        }
+        let y = x;
+        console.log(x(10,15));
+        console.log(y(100,150));
+
+
+        function findMax() { //매개값 개수 지정안해주고 입력한 수에 맞춰 조정되는 것 = arguments
+            console.log(arguments) //매개값 수 알아서 맞춤
+            let max = 0;
+            for(let i=0; i<arguments.length; i++){
+                if(arguments[i]>max){
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+        result = findMax(1,5,3,8,7,4,2);
+        console.log(result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object_def.html</title>
+</head>
+<body>
+    <script>
+        function Person(name, age, hobby){
+            this.name = name;
+            this.age = age;
+            this.hobby = hobby;
+        }
+        let persons = [];
+        Person.prototype.phone = '010-1111-2222'; //prototype하면 기본값 추가됨 근데 다른 p1,p2에는 안들어감
+        Person.prototype.toString = function(){ //이렇게 메소드로 넣음
+            return this.name+', '+this.age+', '+this.hobby+', '+this.phone
+        }
+
+        let p1 = new Person('Park',20,'sleeping');
+        p1.phone = '010-1234-5678';
+        let p2 = new Person('Choi',22,'reading');
+        persons.push(p1);
+        persons.push(p2);
+        persons.push(new Person('Kim',25,'game'));
+        //console.log(persons);
+        for(person of persons){
+            console.log(person.toString());
+        }
+
+        let p4 = {
+            name: 'Hong',
+            age: 20
+        }
+        Object.defineProperty(p4, 'hobby', {value:'reading'}); // p4.hobby = 'reading';과 같은뜻
+        console.log(p4);
+    </script>
+</body>
+</html>

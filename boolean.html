@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boolean.html</title>
+</head>
+<body>
+    <script>
+        let trueOrFalse = new Boolean(10<9); //new Boolean 생략가능 +추가 변수선언시 new로 타입선언 하지않는걸 추천
+        trueOrFalse = 'a'; //값이 할당 되있으면 true
+        trueOrFalse = 0; //값이 할당 되있지 않으면 false
+        trueOrFalse = undefined;
+        trueOrFalse = null;
+        if(trueOrFalse){
+            console.log('참');
+        }else{
+            console.log('거짓');
+        }
+
+
+
+        let val1 = 100;
+        let val2 = '100';
+        if(val1 == val2){//두개 같은걸로 취급
+            console.log('같음');
+        }else{
+            console.log('다름');
+        }
+
+        if(val1 === val2){// === 세 개 쓰면 변수 타입도 비교함 +추가 다를경우 != !==
+            console.log('같음');
+        }else{
+            console.log('다름');
+        }
+
+        if(!(val1 === val2)){
+            console.log('다릅니다.');
+        }else{
+            console.log('다릅니까?');
+        }
+
+        let result = val2 > 100 ? '100초과':'100이하'; //문자타입도 알아서 바꿔서 비교함
+        console.log(result);
+
+        result = new String('hello'); //String타입
+        result = new Number(10); // number타입
+        result = new Object(); //Object타입
+
+        result = {
+            name : 'Hong',
+            age : 20,
+            getName: function(){//기능도 넣을 수 있음
+                return this.name;
+            },
+            getInfo: function(){
+                console.log(this.name +' / '+ this.age);
+            },
+            get getAge(){ //위에껀 메소드, 이건 펑션(getter setter)
+                return this.age
+            },
+            set setAge(age){
+                this.age = age;
+            }
+        }
+        console.log(result.getAge);
+        result.setAge=25; //console.log(result.setAge(25));로는 출력안됨
+
+        result.hobby = 'reading';
+        console.log(result.getName); 
+        console.log(result.getName());
+        result.getInfo();
+
+        delete result.hobby;
+
+        //배열일 경우 for of
+        //오브젝트일 경우 for in
+        let person = {
+            name:'Hwang',
+            age: 10,
+            address: 'Seoul'
+        }
+        let vals = Object.values(person); //배열타입으로 담음
+        console.log(vals);
+        vals = JSON.stringify(person); //요소들을 문자열로 타입 바꿈
+        console.log(vals);
+
+
+        let persons = [person];
+
+        let person1 = {
+            name:'Hwang1',
+            age: 11,
+            address: 'Seoul1'
+        }
+        persons.push(person1);
+
+        for(person of persons){
+            for(field in person){
+                console.log(field,' - ',person[field]);
+            }
+        }
+
+
+
+        let v = result;
+        result.age = 15;
+        console.log(result.name, result.age, result.hobby);
+        console.log(v.name, v.age, v.hobby);
+
+        result = 'hello';
+        v = result;
+        result = 'world';
+        console.log(v); // v에 값을 담고 난후 바꿨기 때문에 여전히 hello이다
+    </script>
+</body>
+</html>

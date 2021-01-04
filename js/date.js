@@ -27,14 +27,14 @@ function showCal() {
 
     let yyyy = document.getElementById('year').value;
     let mm = document.getElementById('month').value;
-    let dd = new Date(yyyy, mm, 0);
+    let dd = new Date(yyyy, mm, 0); //입력한 년월의 마지막날
     console.log(dd.getDate()+4);
     if(mm > 12 || mm < 1){
         alert('정확한 날짜를 입력하세요');
     }else{
         let days = ['Sun','Mon','Tue','Wed','Thr','Fri','Sat'];
         let dates = [];
-        for(let i=1; i<=35; i++){
+        for(let i=1; i<=42; i++){
             //1일이 시작되는 요일
             let today = new Date(yyyy, mm-1, 1);
             let k = today.getDay();

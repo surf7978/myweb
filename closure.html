@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure.html</title>
+</head>
+<body>
+    <script>
+        let x = function(){
+            let iCounter = 0;
+            function changeValue(){
+                iCounter++;
+                console.log(iCounter);
+            }
+            //changeValue(); 
+            return function(){
+                changeValue();
+            } //+function도 리턴가능
+        }
+        let add = x();
+        console.log(add);
+        add();
+        add();
+        add();//선언할때마다 +1씩된다
+    </script>
+</body>
+</html>

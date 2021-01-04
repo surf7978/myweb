@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random.html</title>
+</head>
+<body>
+    <script>
+        let vals = [];
+        for(let i=0; i<6; i++){ //중복값은 안들어오게 하기
+            let val = Math.floor(Math.random()*6)+1; //Math.random() = 0 < x < 1 Math.floor() = 내림
+            vals[i] = val;
+            for(let j = 0; j < i; j++){ //이전값과 비교.
+                if(vals[j] == val){ //동일한 값이 있으면 i--
+                  i--;
+                  break; //반복문 빠져나올때는 break사용해서 나옴
+                }
+            }
+        }
+        console.log(vals);
+    </script>
+</body>
+</html>
