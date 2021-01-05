@@ -8,24 +8,9 @@
 <body>
     <div id="show"></div>
     <script>
-        //오름차순으로 정렬 구현+sort()쓰지말고
-        let numbers = [4,3,9,13,21,7,1];
-        //내가한 것 중간에 안 바뀜
-        // let ex=numbers[0];
-        // for(let i=1; i<numbers.length; i++){
-        //     if(numbers[i]>=ex) {
-        //         ex = numbers[i];
-        //     } else {
-        //         let chg = numbers[i];
-        //         numbers[i] = ex;
-        //         ex = chg;
-        //         i--;
-        //         numbers[i]=ex;
-        //     }
-        // }
-        //console.log(numbers);
+        //오름차순으로 정렬 구현 + sort()쓰지말고
+        //let numbers = [4,3,9,13,21,7,1];
 
-        //정답
         // for(let i=1; i<numbers.length; i++) { 
 		// 	for(let j=0; j<numbers.length-1; j++) {
 		// 		//if((j+1) < numbers.length) { //이렇게해서 j<numbers.length제한걸거나 처음부터 j<numbers.length-1로하거나
@@ -70,6 +55,36 @@
                 // console.log(result[0].childNodes[2].childNodes[0].nodeValue);
                 // document.getElementById('show');
                 // show.innerHTML = xhtp.responseText;
+            }
+            if(xhtp.readyState == 4 && xhtp.status ==200){
+                let doc1 = xhtp.responseXML;
+                let result1 = doc.querySelectorAll('dataset>record');
+                let tableTag1 = document.createElement('table');
+                tableTag1.setAttribute('border', '1');
+                tableTag1.setAttribute('style', 'background-color:silver; cursor: grab;');
+
+                let headerTrTag = document.createElement('tr');
+                for(let i=0; i<result1[0].childNodes.length; i++){
+                    let thTag = document.createElement('th');
+                    thTag.setAttribute('style','text-align:center; padding:10px; color: white; background-color: gray;');
+                    let textNode = document.createTextNode(result1[0].childNodes[i].nodeName.toUpperCase().replace('_',' '));
+                    thTag.append(textNode);
+                    headerTrTag.append(thTag);
+                }
+                tableTag1.append(headerTrTag);
+
+                for(let i=0; i<result1.length; i++){
+                    let trTag = document.createElement('tr');
+                    for(let j=0; j<result1[i].childNodes.length; j++){
+                        let tdTag = document.createElement('td');
+                        tdTag.setAttribute('style','text-align:center; padding:10px; background-color: white;');
+                        let textNode = document.createTextNode(result1[i].childNodes[j].childNodes[0].nodeValue);
+                        tdTag.append(textNode);
+                        trTag.append(tdTag);
+                    }
+                    tableTag1.append(trTag);
+                }
+                document.getElementById('show').append(tableTag1);
             }
         }
         xhtp.open('get', 'dataset.xml'); //구글에서 mocharoo검색 임의의 dataset.xml파일 다운
