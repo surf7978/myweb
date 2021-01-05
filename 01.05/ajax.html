@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax.html</title>
+</head>
+<body>
+    <div id="show"></div>
+    <script>
+        //오름차순으로 정렬 구현+sort()쓰지말고
+        let numbers = [4,3,9,13,21,7,1];
+        //내가한 것 중간에 안 바뀜
+        // let ex=numbers[0];
+        // for(let i=1; i<numbers.length; i++){
+        //     if(numbers[i]>=ex) {
+        //         ex = numbers[i];
+        //     } else {
+        //         let chg = numbers[i];
+        //         numbers[i] = ex;
+        //         ex = chg;
+        //         i--;
+        //         numbers[i]=ex;
+        //     }
+        // }
+        //console.log(numbers);
+
+        //정답
+        // for(let i=1; i<numbers.length; i++) { 
+		// 	for(let j=0; j<numbers.length-1; j++) {
+		// 		//if((j+1) < numbers.length) { //이렇게해서 j<numbers.length제한걸거나 처음부터 j<numbers.length-1로하거나
+		// 			if(numbers[j] > numbers[j+1]) {
+		// 				let ex = numbers[j];
+		// 				numbers[j] = numbers[j+1];
+		// 				numbers[j+1] = ex;
+		// 			}	
+		// 		//}				
+        //   }	
+        // }	
+        // console.log(numbers);		
+
+        let xhtp = new XMLHttpRequest(); //+추가 XML=마크업 랭귀지
+        xhtp.onreadystatechange = function(){
+            // console.log(xhtp);
+            // console.log(xhtp.responseText);
+            //console.log(xhtp.readyState,xhtp.status); //OK상태=200 errer상태=404
+            if(xhtp.readyState == 4 && xhtp.status ==200){ //OK상태일때 입력 후 출력
+                //console.log(xhtp.responseXML);
+                let doc = xhtp.responseXML;
+                let result = doc.querySelectorAll('dataset>record');
+                //console.log(result); 
+                // console.log(result[0].childNodes);//원본인 dataset.xml파일에 줄바꿈을 안해줘서 노드들 사이에 text가 없음
+                let ulTag = document.createElement('ul');
+                document.getElementById('show').append(ulTag);
+                for(let i=0; i<result.length; i++){
+                    //for(let j=0; j<result[i].childNodes.length; j++){
+                        //console.log(result[i].childNodes[j].childNodes[0].nodeValue);
+                        let liTag = document.createElement('li');
+                        let str = 'No.'+result[i].childNodes[0].childNodes[0].nodeValue //
+                                    +' >> '+result[i].childNodes[1].childNodes[0].nodeValue //
+                                    +' '+result[i].childNodes[2].childNodes[0].nodeValue;
+                        let textNode = document.createTextNode(str);
+                        liTag.append(textNode);
+                        ulTag.append(liTag);
+                    //}
+                    //console.log('=========================');
+                }
+                // console.log(result[0].childNodes[0].childNodes[0].nodeValue);
+                // console.log(result[0].childNodes[1].childNodes[0].nodeValue);
+                // console.log(result[0].childNodes[2].childNodes[0].nodeValue);
+                // document.getElementById('show');
+                // show.innerHTML = xhtp.responseText;
+            }
+        }
+        xhtp.open('get', 'dataset.xml'); //구글에서 mocharoo검색 임의의 dataset.xml파일 다운
+        xhtp.send();
+
+        //위에서 연습한거 테이블에 넣어보기
+        xhtp.onreadystatechange = function(){
+            if(xhtp.readyState == 4 && xhtp.status ==200){
+                let doc = xhtp.responseXML;
+                let result = doc.querySelectorAll('dataset>record');
+                let tableTag = document.createElement('table');
+                tableTag.setAttribute('border', '1');
+                tableTag.setAttribute('style', 'background-color:silver; cursor: grab;');
+
+                let headerTrTag = document.createElement('tr');
+                for(let i=0; i<result[0].childNodes.length; i++){
+                    let thTag = document.createElement('th');
+                    thTag.setAttribute('style','text-align:center; padding:10px; color: white; background-color: gray;');
+                    let textNode = document.createTextNode(result[0].childNodes[i].nodeName.toUpperCase().replace('_',' '));
+                    thTag.append(textNode);
+                    headerTrTag.append(thTag);
+                }
+                tableTag.append(headerTrTag);
+
+                for(let i=0; i<result.length; i++){
+                    let trTag = document.createElement('tr');
+                    for(let j=0; j<result[i].childNodes.length; j++){
+                        let tdTag = document.createElement('td');
+                        tdTag.setAttribute('style','text-align:center; padding:10px; background-color: white;');
+                        let textNode = document.createTextNode(result[i].childNodes[j].childNodes[0].nodeValue);
+                        tdTag.append(textNode);
+                        trTag.append(tdTag);
+                    }
+                    tableTag.append(trTag);
+                }
+                document.getElementById('show').append(tableTag);
+            }
+        }
+    </script>
+</body>
+</html>
